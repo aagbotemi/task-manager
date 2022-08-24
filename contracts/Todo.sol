@@ -33,8 +33,7 @@ contract Todo {
         todo.isCompleted = true;
     }
 
-    function deleteTask(uint _taskIndex) external view {
-        Task memory todo = todoTask[msg.sender][_taskIndex];
-        delete todo;
+    function deleteTask(uint _taskIndex) external {
+        delete todoTask[msg.sender][_taskIndex];
     }
 }
